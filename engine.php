@@ -35,6 +35,7 @@ if(isset($_POST['reset'])){
 }
 
 
+
 function jouerT($id, &$joueurEnCours, &$etat, &$victoire){
 
     if($etat[$id] == 0){
