@@ -9,7 +9,7 @@ const jouerBlock = (e) => {
   let req = {
     id: parseInt(idblock)
   };
-  
+
   $.ajax({
     type: 'POST',
     url: "engine.php",
@@ -41,4 +41,37 @@ const jouerBlock = (e) => {
 
 
 };
+
+function resetJeu(){
+  let req = {
+    reset: 1
+  };
+
+  $.ajax({
+    type: 'POST',
+    url: "engine.php",
+    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+    data: jQuery.param(req),
+    success: function (response) {
+      let arr = JSON.parse(response);
+      console.log(arr);
+      draw(arr);
+    }
+  });
+}
+function draw(arr) {
+  $('.block').each(function (i, obj) {
+    switch (arr[i]) {
+      case 0: $(this).html(""); break;
+      case 1: $(this).html("X"); break;
+      case 2: $(this).html("O"); break;
+      default: break;
+    }
+  });
+}
+
+blocks.forEach((el) => {
+  el.addEventListener("click", jouerBlock);
+});
+nouveauJeu.addEventListener("click", resetJeu);
 
