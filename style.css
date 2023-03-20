@@ -1,0 +1,50 @@
+
+.bordure {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: unset;
+    margin: 5rem;
+    background-color: whitesmoke; 
+       
+  }
+  
+  #grille {
+    display: grid;
+    grid-template-columns: 7rem 7rem 7rem;
+    grid-template-rows: 7rem 7rem 7rem;
+    gap: 1rem;
+    margin: 2rem auto;
+    
+  }
+  
+  .block {
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+  }
+  
+  p {
+    margin-bottom: 2rem;
+    font-size: 4rem;
+  }
+  
+  p:first-of-type {
+    color: red;
+  }
+
+  
+ 
+
+  
